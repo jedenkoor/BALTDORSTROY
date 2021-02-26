@@ -1,0 +1,36 @@
+.header {
+  position: absolute;
+  width: 100%;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 23px;
+    padding-bottom: 23px;
+  }
+  &__logo {
+    transform: translateX(2px);
+  }
+  &-menu {
+    &__list {
+      display: flex;
+      padding: 0;
+      list-style: none;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-right: 33px;
+      }
+    }
+    &__link {
+      color: $secondary-white-color;
+      font-weight: 500;
+      &:hover {
+        color: $main-blue-color;
+      }
+      &:focus {
+        color: $hover-blue-color;
+      }
+    }
+  }
+}

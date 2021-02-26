@@ -9,9 +9,14 @@ html(lang="ru")
     meta(content="" name="description")
     meta(content="" name="keywords")
     title #{title}
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="images/apple-touch-icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   body
     .wrapper
       include includes/header.pug
-      .content
+      main.content
         block content
+      include includes/footer.pug

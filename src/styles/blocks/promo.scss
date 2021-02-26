@@ -1,0 +1,48 @@
+.promo {
+  display: flex;
+  &__img {
+    width: 43.6%;
+    object-fit: cover;
+  }
+  &__content {
+    width: 100%;
+    padding: 58px 136px;
+    background-color: $main-blue-color;
+    color: $main-white-color;
+  }
+  &__title {
+    max-width: 440px;
+    margin-bottom: 65px;
+  }
+  &__text {
+    max-width: 510px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $main-white-color08;
+  }
+  &__info {
+    display: flex;
+    margin-top: 59px;
+    padding: 0;
+    list-style: none;
+  }
+  &__col {
+    &:not(:last-child) {
+      margin-right: 110px;
+    }
+  }
+  &-info {
+    &__title {
+      display: inline-block;
+      margin-bottom: 7px;
+      font-weight: 600;
+      font-size: 54px;
+    }
+    &__text {
+      margin: 0;
+      font-weight: 500;
+      color: $main-white-color08;
+    }
+  }
+}

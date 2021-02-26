@@ -1,1 +1,74 @@
 @import '~normalize.css';
+@import 'variables/colors';
+@import 'variables/indents';
+
+html,
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: $main-black-color;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.container {
+  max-width: 1368px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.margin-section {
+  margin-bottom: $margin-section;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul,
+ol {
+  margin: 0;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.h2title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.subtitle {
+  display: inline-block;
+  margin-bottom: 17px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+@import 'blocks/header';
+@import 'blocks/banner';
+@import 'blocks/about';
+@import 'blocks/projects';
+@import 'blocks/facts';
+@import 'blocks/promo';
+@import 'blocks/advantages';
+@import 'blocks/reviews';

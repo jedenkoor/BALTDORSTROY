@@ -4,4 +4,288 @@ block variables
   - var title = 'Главная'
 
 block content
-  | КОНТЕНТ
+
+  section.banner.margin-section
+    .container 
+      span.banner__subtitle Строительство объектов
+      h1.banner__title Проектируем многопрофильные объекты
+      p.banner__text Создание комфортной среды для жизни, отдыха и продуктивной деятельности с использованием лучшего отечественного и мирового опыта и применением безопасных технологий строительства. 
+
+  section.about#about.margin-section
+    .container 
+      span.subtitle О компании
+      .about__top
+        h2.about__title.h2title Шесть лет на рынке, четверть века в истории
+        p.about__text Мы имеем обширную область компетенций на рынке проектирования и возведения многофункциональных объектов спортивно-социального и общественно-делового назначения.
+      .about__map.about-map
+        img(src="images/map.jpg" alt="Карта ")
+        .about-map__marker(style="top: 15%; left: 27%" tabindex="0")
+          span Мурманск
+        .about-map__marker(style="top: 25%; left: 16%" tabindex="0")
+          span Санкт-Петербург
+        .about-map__marker(style="top: 27%; left: 25%" tabindex="0")
+          span Архангельск
+        .about-map__marker(style="top: 56%; left: 2.4%" tabindex="0")
+          span Белгород
+        .about-map__marker(style="top: 60.3%; left: 3.7%" tabindex="0")
+          span Сочи
+        .about-map__marker(style="top: 55%; left: 13%" tabindex="0")
+          span Республика Адыгея
+        .about-map__marker(style="top: 47%; left: 17%" tabindex="0")
+          span Чебоксары
+        .about-map__marker(style="top: 52%; left: 27%" tabindex="0")
+          span Пермь
+        .about-map__marker(style="top: 59%; left: 28%" tabindex="0")
+          span Екатеринбург
+        .about-map__marker(style="top: 73%; left: 47%" tabindex="0")
+          span Красноярск
+        .about-map__marker(style="top: 85%; left: 60%" tabindex="0")
+          span Улан-Удэ
+        .about-map__marker(style="top: 86%; left: 33%" tabindex="0")
+          span Душанбе
+      ul.about__list
+        li.about__item.about-item
+          h3.about-item__title Комплексное проектирование<br> зданий и сооружений
+          p.about-item__text Мы разрабатываем надежные энергоэффективные решения с применением передовых материалов и технологий, обеспечивая оптимальное сочетание цены и качества.
+        li.about__item.about-item
+          h3.about-item__title Выгодные поставки<br> оборудования
+          p.about-item__text Используйте наши знания и партнерские возможности по организации поставок необходимого оборудования ведущих производителей.
+        li.about__item.about-item
+          h3.about-item__title Общестроительные<br> и кровельные работы
+          p.about-item__text Мы специалисты и для нас нет неразрешимых задач в строительномонтажных, монолитных, кровельных и фасадных работах.
+        li.about__item.about-item
+          h3.about-item__title Установка современных<br> инженерных систем
+          p.about-item__text Получите полный комплекс услуг по монтажу и пусконаладочным работам с контролем качества и гарантией.
+
+  section.projects#projects.margin-section
+    .container.tabs
+      .projects__top
+        h2.projects__title.h2title Проекты
+        ul.projects__tabs.projects-tabs
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn.tabs__btn--active(data-tab="1") 2020
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="2") 2019
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="3") 2018
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="4") 2017
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="5") 2016
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="6") 2015
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="7") 2014
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="8") 2013
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="9") 2012
+          li.projects-tabs__item
+            button.projects-tabs__btn.tabs__btn(data-tab="10") 2011
+      .projects__tab.tabs__container.tabs__container--active(data-tab="1")
+        .projects__gallery.swiper-container
+          .swiper-wrapper
+            .projects__item.projects-item.swiper-slide
+              img.projects-item__img(src="images/project-2020-1.png" alt="")
+              .projects-item__overlay
+              .projects-item__top
+                .projects-item__type Объект
+                .projects-item__name Крытый ледовый каток<br> с системой «живого»<br> климата в составе ФОК
+              ul.projects-item__bot
+                li.projects-item__col
+                  .projects-item__title Заказчик
+                  .projects-item__text ООО «Газпром инвестгазификация»
+                li.projects-item__col
+                  .projects-item__title Площадь ледового поля
+                  .projects-item__text 1850 кв.м
+                li.projects-item__col
+                  .projects-item__title Сроки
+                  .projects-item__text 2016 - 2017
+            .projects__item.projects-item.swiper-slide
+              img.projects-item__img(src="images/project-2020-1.png" alt="")
+              .projects-item__overlay
+              .projects-item__top
+                .projects-item__type Объект
+                .projects-item__name Крытый ледовый каток<br> с системой «живого»<br> климата в составе ФОК
+              ul.projects-item__bot
+                li.projects-item__col
+                  .projects-item__title Заказчик
+                  .projects-item__text ООО «Газпром инвестгазификация»
+                li.projects-item__col
+                  .projects-item__title Площадь ледового поля
+                  .projects-item__text 1850 кв.м
+                li.projects-item__col
+                  .projects-item__title Сроки
+                  .projects-item__text 2016 - 2017
+            .projects__item.projects-item.swiper-slide
+              img.projects-item__img(src="images/project-2020-1.png" alt="")
+              .projects-item__overlay
+              .projects-item__top
+                .projects-item__type Объект
+                .projects-item__name Крытый ледовый каток<br> с системой «живого»<br> климата в составе ФОК
+              ul.projects-item__bot
+                li.projects-item__col
+                  .projects-item__title Заказчик
+                  .projects-item__text ООО «Газпром инвестгазификация»
+                li.projects-item__col
+                  .projects-item__title Площадь ледового поля
+                  .projects-item__text 1850 кв.м
+                li.projects-item__col
+                  .projects-item__title Сроки
+                  .projects-item__text 2016 - 2017
+          .swiper-button-prev
+          .swiper-button-next
+      .projects__tab.tabs__container(data-tab="2")
+        .projects__gallery.swiper-container
+          .swiper-wrapper
+            .projects__item.projects-item.swiper-slide
+              img.projects-item__img(src="images/project-2020-1.png" alt="")
+              .projects-item__overlay
+              .projects-item__top
+                .projects-item__type Объект
+                .projects-item__name Крытый ледовый каток<br> с системой «живого»<br> климата в составе ФОК
+              ul.projects-item__bot
+                li.projects-item__col
+                  .projects-item__title Заказчик
+                  .projects-item__text ООО «Газпром инвестгазификация»
+                li.projects-item__col
+                  .projects-item__title Площадь ледового поля
+                  .projects-item__text 1850 кв.м
+                li.projects-item__col
+                  .projects-item__title Сроки
+                  .projects-item__text 2016 - 2017
+            .projects__item.projects-item.swiper-slide
+              img.projects-item__img(src="images/project-2020-1.png" alt="")
+              .projects-item__overlay
+              .projects-item__top
+                .projects-item__type Объект
+                .projects-item__name Крытый ледовый каток<br> с системой «живого»<br> климата в составе ФОК
+              ul.projects-item__bot
+                li.projects-item__col
+                  .projects-item__title Заказчик
+                  .projects-item__text ООО «Газпром инвестгазификация»
+                li.projects-item__col
+                  .projects-item__title Площадь ледового поля
+                  .projects-item__text 1850 кв.м
+                li.projects-item__col
+                  .projects-item__title Сроки
+                  .projects-item__text 2016 - 2017
+          .swiper-button-prev
+          .swiper-button-next
+      .projects__tab.tabs__container(data-tab="3")
+      .projects__tab.tabs__container(data-tab="4")
+      .projects__tab.tabs__container(data-tab="5")
+      .projects__tab.tabs__container(data-tab="6")
+      .projects__tab.tabs__container(data-tab="7")
+      .projects__tab.tabs__container(data-tab="8")
+      .projects__tab.tabs__container(data-tab="9")
+      .projects__tab.tabs__container(data-tab="10")
+
+  section.facts.margin-section
+    .container
+      span.subtitle Ключевые факты
+      ul.facts__grid 
+        li.facts__item.facts-item
+          h2.facts__title.h2title За шесть лет нашей<br> деятельности
+        li.facts__item.facts-item
+          .facts-item__title 01
+          .facts-item__text Реализовали более 30 объектов
+        li.facts__item.facts-item
+          .facts-item__title 02
+          .facts-item__text Заключили ряд эксклюзивных дилерских соглашений
+        li.facts__item.facts-item
+          .facts-item__title 03
+          .facts-item__text Накопили значительный объем знаний
+        li.facts__item.facts-item
+          .facts-item__title 04
+          .facts-item__text Разработали и внедрили десятки инновационных решений
+        li.facts__item.facts-item
+          .facts-item__title 05
+          .facts-item__text Расширили базу с поставщиками оборудования
+        li.facts__item.facts-item
+          .facts-item__title 06
+          .facts-item__text Освоили полный цикл работ: от проектирования до строительства 
+
+  section.promo.margin-section
+    img.promo__img(src="images/promo.jpg" alt="Промо")
+    .promo__content 
+      span.subtitle Наш узкий профиль
+      h2.promo__title.h2title О спорт, ты — лёд, вода и БАЛТПРОМХОЛОД
+      p.promo__text Мы строим ледовые дворцы и бассейны с 2012 года и в совершенстве освоили все этапы их создания: от комплексной разработки до последовательного монтажа технологических участков.
+      p.promo__text Добавьте к этому наш опыт в создании «живого» климата на спортивных объектах, чтобы получить полный комплект, смонтированный «под ключ»
+      ul.promo__info.promo-info
+        li.promo__col
+          span.promo-info__title 9
+          p.promo-info__text Лет работает
+        li.promo__col
+          span.promo-info__title 25
+          p.promo-info__text Объектов построено
+
+  section.advantages.margin-section
+    .container
+      ul.advantages__list
+        li.advantages__item.advantages-item
+          .advantages-item__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V20C22 20.2652 21.8946 20.5196 21.7071 20.7071C21.5196 20.8946 21.2652 21 21 21H3C2.73478 21 2.48043 20.8946 2.29289 20.7071C2.10536 20.5196 2 20.2652 2 20V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3ZM4 5V19H20V5H4ZM8.5 14H14C14.1326 14 14.2598 13.9473 14.3536 13.8536C14.4473 13.7598 14.5 13.6326 14.5 13.5C14.5 13.3674 14.4473 13.2402 14.3536 13.1464C14.2598 13.0527 14.1326 13 14 13H10C9.33696 13 8.70107 12.7366 8.23223 12.2678C7.76339 11.7989 7.5 11.163 7.5 10.5C7.5 9.83696 7.76339 9.20107 8.23223 8.73223C8.70107 8.26339 9.33696 8 10 8H11V6H13V8H15.5V10H10C9.86739 10 9.74021 10.0527 9.64645 10.1464C9.55268 10.2402 9.5 10.3674 9.5 10.5C9.5 10.6326 9.55268 10.7598 9.64645 10.8536C9.74021 10.9473 9.86739 11 10 11H14C14.663 11 15.2989 11.2634 15.7678 11.7322C16.2366 12.2011 16.5 12.837 16.5 13.5C16.5 14.163 16.2366 14.7989 15.7678 15.2678C15.2989 15.7366 14.663 16 14 16H13V18H11V16H8.5V14Z" fill="#008CCC"/>
+            </svg>
+          p.advantages-item__text Снижаем финансовые затраты заказчика
+        li.advantages__item.advantages-item
+          .advantages-item__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5 12L10.412 14.116L9.972 19.608L6.388 15.424L1.028 16.702L3.9 12L1.028 7.29797L6.388 8.57597L9.972 4.39197L10.412 9.88397L15.5 12ZM10.293 12L8.516 11.261L8.363 9.34497L7.112 10.805L5.241 10.358L6.244 12L5.241 13.641L7.111 13.195L8.363 14.654L8.516 12.739L10.293 12ZM22 7.99997H13V5.99997H22V7.99997ZM22 18H13V16H22V18ZM22 13H17V11H22V13Z" fill="#008CCC"/>
+            </svg>
+          p.advantages-item__text Функционально улучшаем характеристики объектов
+        li.advantages__item.advantages-item
+          .advantages-item__icon 
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 1V3H15V1H17V3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V20C22 20.2652 21.8946 20.5196 21.7071 20.7071C21.5196 20.8946 21.2652 21 21 21H3C2.73478 21 2.48043 20.8946 2.29289 20.7071C2.10536 20.5196 2 20.2652 2 20V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3H7V1H9ZM20 8H4V19H20V8ZM15.036 10.136L16.45 11.55L11.5 16.5L7.964 12.964L9.38 11.55L11.501 13.672L15.037 10.136H15.036Z" fill="#008CCC"/>
+            </svg>
+          p.advantages-item__text Сокращаем общие сроки производства работ
+
+  section.reviews#reviews.margin-section
+    .container.tabs
+      span.reviews.subtitle Нас благодарят
+      ul.reviews__tabs.reviews-tabs
+        li.reviews-tabs__item 
+          button.reviews-tabs__btn.tabs__btn.tabs__btn--active(data-tab="1") Отзывы
+        li.reviews-tabs__item 
+          button.reviews-tabs__btn.tabs__btn(data-tab="2") Сертификаты
+      .reviews__tab.tabs__container.tabs__container--active(data-tab="1")
+        .reviews__gallery.swiper-container
+          .swiper-wrapper
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+      .reviews__tab.tabs__container(data-tab="2")
+        .reviews__gallery.swiper-container
+          .swiper-wrapper
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+            .reviews__item.reviews-item.swiper-slide
+              img.reviews-item__img(src="images/review.jpg" alt="")
+
+
+
+  section#contacts.margin-section
