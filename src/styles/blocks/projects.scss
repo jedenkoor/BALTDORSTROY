@@ -4,6 +4,14 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 47px;
+    @include w1023 {
+      display: block;
+    }
+  }
+  &__title {
+    @include w1023 {
+      margin-bottom: 28px;
+    }
   }
   &__tabs {
     display: flex;
@@ -14,6 +22,9 @@
     &__item {
       &:not(:last-child) {
         margin-right: 41px;
+        @include w1200 {
+          margin-right: 35px;
+        }
       }
     }
     &__btn {
@@ -44,12 +55,21 @@
     max-width: 984px;
     margin-left: 0;
     overflow: visible;
+    @include w1200 {
+      max-width: 700px;
+    }
+    @include w1023 {
+      max-width: 596px;
+    }
     .swiper-button-prev,
     .swiper-button-next {
       top: 0;
       width: 64px;
       height: 100%;
       margin-top: 0;
+      @include w1023 {
+        display: none;
+      }
       &:after {
         width: 16px;
         height: 16px;
@@ -88,6 +108,12 @@
   &__item {
     width: 984px;
     height: 720px;
+    @include w1200 {
+      height: 538px;
+    }
+    @include w1023 {
+      height: 438px;
+    }
   }
   &-item {
     color: $main-white-color;
@@ -134,13 +160,27 @@
       width: 100%;
       display: flex;
       list-style: none;
+      @include w1200 {
+        flex-wrap: wrap;
+      }
     }
     &__col {
       &:nth-child(1) {
         flex: 0 0 45.2%;
+        @include w1200 {
+          flex: 0 0 100%;
+          margin-bottom: 16px;
+        }
       }
       &:nth-child(2) {
-        flex: 0 0 36.5%;
+        @include w1200 {
+          flex: 0 0 50%;
+        }
+      }
+      &:nth-child(3) {
+        @include w1200 {
+          flex: 0 0 50%;
+        }
       }
     }
     &__type {

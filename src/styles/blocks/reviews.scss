@@ -1,8 +1,20 @@
 .reviews {
+  &__container {
+    overflow: hidden;
+  }
+  &__subtitle {
+    @include w1023 {
+      text-align: left;
+    }
+  }
   &__tabs {
     display: flex;
     list-style: none;
+    margin-bottom: 56px;
     padding-left: 0;
+    @include w1023 {
+      margin-bottom: 46px;
+    }
   }
   &-tabs {
     &__item {
@@ -17,6 +29,7 @@
       color: rgba(40, 40, 40, 0.5);
       background: none;
       border: none;
+      cursor: pointer;
       &.tabs__btn--active {
         color: $main-black-color;
       }
@@ -26,6 +39,94 @@
       &:not(.tabs__btn--active):focus {
         color: $hover-blue-color;
       }
+    }
+  }
+  &__tab {
+    display: none;
+    &.tabs__container--active {
+      display: block;
+    }
+  }
+  &__gallery {
+    overflow: visible;
+    @include w1023 {
+      padding-bottom: 40px;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: -87px;
+      width: 25px;
+      height: 25px;
+      margin-top: 0;
+      @include w1023 {
+        display: none;
+      }
+      &:after {
+        width: 16px;
+        height: 16px;
+        font-size: 0;
+      }
+    }
+    .swiper-button-prev {
+      left: auto;
+      right: 41px;
+      &:hover:after {
+        background: url('../images/projects-prev-hover.svg') center/contain
+          no-repeat;
+      }
+      &:focus:after {
+        background: url('../images/projects-prev-focus.svg') center/contain
+          no-repeat;
+      }
+      &:after {
+        background: url('../images/reviews-prev.svg') center/contain no-repeat;
+      }
+    }
+    .swiper-button-next {
+      right: 0;
+      &:hover:after {
+        background: url('../images/projects-next-hover.svg') center/contain
+          no-repeat;
+      }
+      &:focus:after {
+        background: url('../images/projects-next-focus.svg') center/contain
+          no-repeat;
+      }
+      &:after {
+        background: url('../images/reviews-next.svg') center/contain no-repeat;
+      }
+    }
+    .swiper-pagination {
+      top: -82px;
+      right: 75px;
+      bottom: auto;
+      left: auto;
+      width: auto;
+      color: #cacaca;
+      @include w1023 {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+      }
+      span {
+        font-weight: 500;
+        margin: 0 13px;
+      }
+    }
+    .swiper-pagination-customspan {
+      color: $main-black-color;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 1px solid #ebebed;
+    @include w1023 {
+      padding: 30px;
     }
   }
 }

@@ -4,11 +4,19 @@
     padding-top: 1px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      justify-content: space-between;
+    }
   }
   &__item {
     display: flex;
     align-items: center;
     flex: 0 0 33.95%;
+    @include w1200 {
+      flex-direction: column;
+      flex: 0 0 31.4%;
+      text-align: center;
+    }
   }
   &-item {
     &__icon {
@@ -21,6 +29,10 @@
       margin-right: 16px;
       border-radius: 50%;
       background-color: rgb(0, 140, 204, 0.1);
+      @include w1200 {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
     }
     &__text {
       margin: 0;
@@ -28,6 +40,16 @@
       font-weight: 500;
       font-size: 20px;
       line-height: 24px;
+      @include w1440 {
+        padding-right: 16px;
+      }
+      @include w1200 {
+        padding-right: 0;
+      }
+      @include w1023 {
+        font-size: 16px;
+        line-height: 20px;
+      }
     }
   }
 }

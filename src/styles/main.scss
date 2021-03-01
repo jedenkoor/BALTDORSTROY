@@ -1,4 +1,5 @@
 @import '~normalize.css';
+@import 'variables/mixins';
 @import 'variables/colors';
 @import 'variables/indents';
 
@@ -25,11 +26,20 @@ body {
 .container {
   max-width: 1368px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: $padding-container;
+  @include w767 {
+    padding: $mobile-padding-container;
+  }
 }
 
 .margin-section {
   margin-bottom: $margin-section;
+  @include w1023 {
+    margin-bottom: $tablet-margin-section;
+  }
+  @include w767 {
+    margin-bottom: $mobile-margin-section;
+  }
 }
 
 * {
@@ -50,6 +60,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
 .h2title {
   margin: 0;
   font-size: 32px;
@@ -57,14 +72,18 @@ a {
 }
 
 .subtitle {
-  display: inline-block;
+  display: block;
   margin-bottom: 17px;
   font-weight: 500;
   font-size: 12px;
   text-transform: uppercase;
+  @include w1023 {
+    text-align: center;
+  }
 }
 
 @import 'blocks/header';
+@import 'blocks/footer';
 @import 'blocks/banner';
 @import 'blocks/about';
 @import 'blocks/projects';
@@ -72,3 +91,4 @@ a {
 @import 'blocks/promo';
 @import 'blocks/advantages';
 @import 'blocks/reviews';
+@import 'blocks/contacts';

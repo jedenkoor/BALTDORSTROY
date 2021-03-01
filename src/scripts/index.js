@@ -27,6 +27,7 @@ import 'swiper/swiper-bundle.css'
         if (item.getAttribute('data-tab') === tabDataAttr) {
           item.classList.add('tabs__container--active')
           initSliderProjects()
+          initSliderReviews()
         }
       })
 
@@ -40,20 +41,68 @@ import 'swiper/swiper-bundle.css'
     }
     // Tabs End
 
-    // Swiper
+    // Swiper projects
     initSliderProjects()
     function initSliderProjects() {
       ;(() =>
-        new Swiper('.tabs__container--active .swiper-container', {
+        new Swiper('.projects__tab.tabs__container--active .swiper-container', {
           speed: 500,
           spaceBetween: 24,
           slideToClickedSlide: true,
           navigation: {
-            nextEl: '.tabs__container--active .swiper-button-next',
-            prevEl: '.tabs__container--active .swiper-button-prev'
+            nextEl:
+              '.projects__tab.tabs__container--active .swiper-button-next',
+            prevEl: '.projects__tab.tabs__container--active .swiper-button-prev'
           }
         }))()
     }
-    // Swiper End
+    // Swiper projects End
+
+    // Swiper reviews
+    initSliderReviews()
+    function initSliderReviews() {
+      ;(() =>
+        new Swiper('.reviews__tab.tabs__container--active .swiper-container', {
+          speed: 500,
+          spaceBetween: 24,
+          slideToClickedSlide: true,
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          pagination: {
+            el: '.reviews__tab.tabs__container--active .swiper-pagination'
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 3,
+              slidesPerGroup: 3
+            },
+            1024: {
+              slidesPerView: 4,
+              slidesPerGroup: 4,
+              pagination: {
+                el: '.reviews__tab.tabs__container--active .swiper-pagination',
+                type: 'custom',
+                renderCustom: function (swiper, current, total) {
+                  function numberAppend(d) {
+                    return d < 10 ? '0' + d.toString() : d.toString()
+                  }
+                  return `<span class="swiper-pagination-customspan">${numberAppend(
+                    current
+                  )}</span> / <span class="swiper-pagination-totalspan">${numberAppend(
+                    total
+                  )}</span>`
+                }
+              },
+              navigation: {
+                nextEl:
+                  '.reviews__tab.tabs__container--active .swiper-button-next',
+                prevEl:
+                  '.reviews__tab.tabs__container--active .swiper-button-prev'
+              }
+            }
+          }
+        }))()
+    }
+    // Swiper reviews End
   })
 })()

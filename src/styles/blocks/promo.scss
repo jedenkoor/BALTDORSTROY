@@ -1,18 +1,46 @@
 .promo {
   display: flex;
+  justify-content: center;
+  background-color: $main-blue-color;
+  @include w1023 {
+    display: block;
+  }
   &__img {
-    width: 43.6%;
+    max-width: 836px;
     object-fit: cover;
+    @include w1440 {
+      max-width: 50%;
+    }
+    @include w1023 {
+      max-width: none;
+      width: 100%;
+      height: 340px;
+      object-position: bottom;
+    }
   }
   &__content {
     width: 100%;
     padding: 58px 136px;
-    background-color: $main-blue-color;
     color: $main-white-color;
+    @include more-fullhd {
+      width: auto;
+    }
+    @include w1440 {
+      padding: 58px 32px;
+    }
+    @include w1023 {
+      padding: 48px 32px;
+    }
   }
   &__title {
     max-width: 440px;
     margin-bottom: 65px;
+    @include w1023 {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 48px;
+      text-align: center;
+    }
   }
   &__text {
     max-width: 510px;
@@ -20,12 +48,22 @@
     font-size: 16px;
     line-height: 24px;
     color: $main-white-color08;
+    @include w1023 {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
   }
   &__info {
     display: flex;
     margin-top: 59px;
     padding: 0;
     list-style: none;
+    @include w1023 {
+      justify-content: center;
+      margin-top: 44px;
+      text-align: center;
+    }
   }
   &__col {
     &:not(:last-child) {

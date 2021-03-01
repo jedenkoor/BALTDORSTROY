@@ -8,18 +8,75 @@
     padding-top: 23px;
     padding-bottom: 23px;
   }
+  &__checkbox {
+    display: none;
+    &:checked ~ .header__menu {
+      transform: translateY(0);
+    }
+  }
   &__logo {
     transform: translateX(2px);
+    @include w1023 {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  &__menu {
+    @include w1023 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      transition: transform 0.3s;
+      width: 100%;
+      padding: 146px 0;
+      background: $main-blue-color;
+    }
   }
   &-menu {
+    &__close {
+      display: none;
+      @include w1023 {
+        position: absolute;
+        top: 27px;
+        right: 24px;
+        display: block;
+        cursor: pointer;
+      }
+    }
     &__list {
       display: flex;
       padding: 0;
       list-style: none;
+      @include w1023 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 24px;
+        margin: 0 auto;
+        width: 500px;
+      }
     }
     &__item {
+      @include w1023 {
+        order: initial !important;
+      }
+      &:nth-child(1) {
+        order: -10;
+      }
+      &:nth-child(2) {
+        order: -8;
+      }
+      &:nth-child(4) {
+        order: -9;
+      }
+      &:nth-child(5) {
+        order: -7;
+      }
       &:not(:last-child) {
         margin-right: 33px;
+        @include w1023 {
+          margin-right: 0;
+        }
       }
     }
     &__link {
@@ -31,6 +88,13 @@
       &:focus {
         color: $hover-blue-color;
       }
+    }
+  }
+  &__burger {
+    display: none;
+    @include w1023 {
+      display: block;
+      cursor: pointer;
     }
   }
 }

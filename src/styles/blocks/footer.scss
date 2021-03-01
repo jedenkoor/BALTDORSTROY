@@ -1,0 +1,53 @@
+.footer {
+  background-color: $footer-black-color;
+  padding: 72px 0 31px;
+  &__container {
+    display: grid;
+    grid-template-columns: 42.4% 34% 1fr;
+    grid-gap: 100px 0;
+    @include w1023 {
+      grid-template-columns: 36% 37% 1fr;
+    }
+  }
+  &-menu {
+    grid-column: 2 / 4;
+    &__list {
+      display: grid;
+      grid-template-columns: 33.5% 27% 1fr;
+      grid-gap: 22px 0;
+      max-width: 510px;
+      list-style: none;
+      padding-left: 0;
+      @include w1023 {
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 77px;
+      }
+    }
+    &__link {
+      font-weight: 500;
+      color: $main-white-color;
+      &:hover {
+        color: $main-blue-color;
+        text-decoration: underline;
+      }
+      &:focus {
+        color: $hover-blue-color;
+        text-decoration: underline;
+      }
+    }
+  }
+  a.footer__link {
+    &:hover {
+      color: $main-blue-color;
+      text-decoration: underline;
+    }
+    &:focus {
+      color: $hover-blue-color;
+      text-decoration: underline;
+    }
+  }
+  &__link {
+    line-height: 20px;
+    color: $secondary-white-color05;
+  }
+}
