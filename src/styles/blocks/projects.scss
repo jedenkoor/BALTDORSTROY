@@ -1,4 +1,7 @@
 .projects {
+  @include w767 {
+    margin-bottom: 90px;
+  }
   &__top {
     display: flex;
     justify-content: space-between;
@@ -7,16 +10,35 @@
     @include w1023 {
       display: block;
     }
+    @include w767 {
+      margin-bottom: 20px;
+    }
   }
   &__title {
     @include w1023 {
       margin-bottom: 28px;
+    }
+    @include w767 {
+      text-align: center;
     }
   }
   &__tabs {
     display: flex;
     padding-left: 0;
     list-style: none;
+    overflow-x: auto;
+    @include w767 {
+      transform: translateX(-16px);
+      width: calc(100% + 32px);
+      padding-bottom: 8px;
+      padding-left: 16px;
+    }
+    &:after {
+      @include w767 {
+        content: '';
+        flex: 0 0 16px;
+      }
+    }
   }
   &-tabs {
     &__item {
@@ -24,6 +46,9 @@
         margin-right: 41px;
         @include w1200 {
           margin-right: 35px;
+        }
+        @include w767 {
+          margin-right: 22px;
         }
       }
     }
@@ -60,6 +85,10 @@
     }
     @include w1023 {
       max-width: 596px;
+    }
+    @include w767 {
+      transform: translateX(-16px);
+      width: calc(100% + 32px);
     }
     .swiper-button-prev,
     .swiper-button-next {
@@ -105,6 +134,13 @@
       }
     }
   }
+  .swiper-pagination {
+    display: none;
+    @include w767 {
+      display: block;
+      bottom: -30px;
+    }
+  }
   &__item {
     width: 984px;
     height: 720px;
@@ -113,6 +149,9 @@
     }
     @include w1023 {
       height: 438px;
+    }
+    @include w767 {
+      height: auto;
     }
   }
   &-item {
@@ -131,6 +170,19 @@
         transform: translateY(0);
       }
     }
+    &__wrapper {
+      height: 100%;
+      @include w767 {
+        position: relative;
+        height: auto;
+      }
+      &:last-child {
+        @include w767 {
+          background: #edf9ff;
+          color: $main-black-color;
+        }
+      }
+    }
     &__img {
       width: 100%;
       height: 100%;
@@ -143,25 +195,45 @@
       height: 100%;
       background: rgba(255, 255, 255, 0.324);
       transition: background 0.5s;
+      @include w767 {
+        background: linear-gradient(
+          180deg,
+          #091920 -7.22%,
+          rgba(86, 86, 86, 0) 104.44%
+        );
+      }
     }
     &__top,
     &__bot {
       position: absolute;
       padding: 32px;
       transition: transform 0.5s;
+      @include w767 {
+        position: static;
+        transform: none;
+        padding: 16px;
+      }
     }
     &__top {
       top: 0;
       transform: translateY(-100%);
+      @include w767 {
+        transform: none;
+      }
     }
     &__bot {
       transform: translateY(100%);
       bottom: 0;
       width: 100%;
       display: flex;
+      justify-content: space-between;
       list-style: none;
       @include w1200 {
         flex-wrap: wrap;
+      }
+      @include w767 {
+        transform: none;
+        color: $secondary-black-color;
       }
     }
     &__col {
@@ -194,14 +266,26 @@
       font-weight: 600;
       font-size: 32px;
       line-height: 36px;
+      @include w767 {
+        font-size: 20px;
+        line-height: 24px;
+      }
     }
     &__title {
       margin-bottom: 8px;
       font-weight: 600;
       line-height: 26px;
+      @include w767 {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
     &__text {
       line-height: 26px;
+      @include w767 {
+        font-size: 12px;
+        line-height: 16px;
+      }
     }
   }
 }

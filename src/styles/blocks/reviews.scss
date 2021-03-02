@@ -30,6 +30,9 @@
       background: none;
       border: none;
       cursor: pointer;
+      @include w1023 {
+        font-size: 23px;
+      }
       &.tabs__btn--active {
         color: $main-black-color;
       }

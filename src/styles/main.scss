@@ -17,6 +17,7 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .content {
@@ -61,7 +62,7 @@ a {
 }
 
 img {
-  display: inline-block;
+  display: block;
   max-width: 100%;
 }
 
@@ -69,6 +70,10 @@ img {
   margin: 0;
   font-size: 32px;
   line-height: 40px;
+  @include w767 {
+    font-size: 24px;
+    line-height: 28px;
+  }
 }
 
 .subtitle {
@@ -78,7 +83,18 @@ img {
   font-size: 12px;
   text-transform: uppercase;
   @include w1023 {
+    margin-bottom: 18px;
     text-align: center;
+  }
+}
+
+.shortbanner {
+  height: 104px;
+  margin-bottom: 96px;
+  background: url('../images/shortbanner.jpg') center/cover no-repeat;
+  @include w767 {
+    height: 84px;
+    margin-bottom: 50px;
   }
 }
 
@@ -92,3 +108,4 @@ img {
 @import 'blocks/advantages';
 @import 'blocks/reviews';
 @import 'blocks/contacts';
+@import 'blocks/text';

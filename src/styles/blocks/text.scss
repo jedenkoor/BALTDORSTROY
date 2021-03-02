@@ -1,0 +1,19 @@
+.text__container {
+  max-width: 850px;
+  margin-bottom: 64px;
+  h1 {
+    margin-bottom: 44px;
+  }
+  p {
+    line-height: 24px;
+    &.padding-left {
+      padding-left: 35px;
+    }
+    &.padding-left + p:not(.padding-left) {
+      margin-top: 44px;
+    }
+  }
+  ul {
+    margin: 40px 0;
+  }
+}

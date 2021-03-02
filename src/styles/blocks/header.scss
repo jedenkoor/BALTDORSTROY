@@ -7,18 +7,29 @@
     justify-content: space-between;
     padding-top: 23px;
     padding-bottom: 23px;
+    @include w767 {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
   }
   &__checkbox {
     display: none;
     &:checked ~ .header__menu {
+      transition: transform 0.3s;
       transform: translateY(0);
+    }
+    &:checked ~ .header__overlay {
+      display: block;
     }
   }
   &__logo {
     transform: translateX(2px);
     @include w1023 {
       position: relative;
-      z-index: 2;
+      z-index: 4;
+    }
+    @include w767 {
+      width: 160px;
     }
   }
   &__menu {
@@ -26,11 +37,14 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 3;
       transform: translateY(-100%);
-      transition: transform 0.3s;
       width: 100%;
       padding: 146px 0;
       background: $main-blue-color;
+    }
+    @include w767 {
+      padding: 114px 0 54px;
     }
   }
   &-menu {
@@ -42,6 +56,16 @@
         right: 24px;
         display: block;
         cursor: pointer;
+      }
+      @include w767 {
+        right: 8px;
+        padding: 8px;
+      }
+      svg {
+        @include w767 {
+          width: 24px;
+          height: 24px;
+        }
       }
     }
     &__list {
@@ -55,6 +79,12 @@
         margin: 0 auto;
         width: 500px;
       }
+      @include w767 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+      }
     }
     &__item {
       @include w1023 {
@@ -62,15 +92,27 @@
       }
       &:nth-child(1) {
         order: -10;
+        @include w767 {
+          order: -10 !important;
+        }
       }
       &:nth-child(2) {
         order: -8;
+        @include w767 {
+          order: -8 !important;
+        }
       }
       &:nth-child(4) {
         order: -9;
+        @include w767 {
+          order: -9 !important;
+        }
       }
       &:nth-child(5) {
         order: -7;
+        @include w767 {
+          order: -7 !important;
+        }
       }
       &:not(:last-child) {
         margin-right: 33px;
@@ -84,9 +126,17 @@
       font-weight: 500;
       &:hover {
         color: $main-blue-color;
+        @include w1023 {
+          color: $secondary-white-color;
+          text-decoration: underline;
+        }
       }
       &:focus {
         color: $hover-blue-color;
+        @include w1023 {
+          color: $secondary-white-color;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -96,5 +146,25 @@
       display: block;
       cursor: pointer;
     }
+    @include w767 {
+      padding: 16px;
+      transform: translateX(16px);
+    }
+    svg {
+      @include w767 {
+        width: 24px;
+        height: 16px;
+      }
+    }
+  }
+  &__overlay {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(6, 17, 30, 0.68);
   }
 }

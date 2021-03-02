@@ -28,8 +28,8 @@
     @content;
   }
 }
-@mixin w380 {
-  @media screen and (max-width: 380px) {
+@mixin w360 {
+  @media screen and (max-width: 360px) {
     @content;
   }
 }

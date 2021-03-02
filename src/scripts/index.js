@@ -1,9 +1,45 @@
-// import Swiper JS
 import Swiper from 'swiper/swiper-bundle.js'
-// import Swiper styles
 import 'swiper/swiper-bundle.css'
 ;(() => {
   window.addEventListener('DOMContentLoaded', () => {
+    // Menu items
+    if (document.querySelectorAll('.header-menu__link').length) {
+      const linksMenu = document.querySelectorAll('.header-menu__link')
+      linksMenu.forEach((link) =>
+        link.addEventListener('click', () => {
+          document.getElementById('header-menu').checked = false
+        })
+      )
+    }
+    // Menu items End
+
+    // Map markers
+    if (
+      document.querySelectorAll('.about-map__marker span').length &&
+      document.documentElement.clientWidth < 768
+    ) {
+      const mapMarkersText = document.querySelectorAll(
+        '.about-map__marker span'
+      )
+
+      function sleep(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms))
+      }
+
+      async function showMarkersText() {
+        for (let i = 0; i < mapMarkersText.length; i++) {
+          mapMarkersText[i].style.display = 'block'
+          await sleep(2000)
+          mapMarkersText[i].style.display = 'none'
+          if (i === mapMarkersText.length - 1) {
+            i = -1
+          }
+        }
+      }
+      showMarkersText()
+    }
+    // Map markers End
+
     // Tabs
     if (document.querySelectorAll('.tabs').length) {
       const allTabsNavigationItems = document.querySelectorAll('.tabs__btn')
@@ -47,12 +83,20 @@ import 'swiper/swiper-bundle.css'
       ;(() =>
         new Swiper('.projects__tab.tabs__container--active .swiper-container', {
           speed: 500,
-          spaceBetween: 24,
+          spaceBetween: 16,
           slideToClickedSlide: true,
+          pagination: {
+            el: '.projects__tab.tabs__container--active .swiper-pagination'
+          },
           navigation: {
             nextEl:
               '.projects__tab.tabs__container--active .swiper-button-next',
             prevEl: '.projects__tab.tabs__container--active .swiper-button-prev'
+          },
+          breakpoints: {
+            768: {
+              spaceBetween: 24
+            }
           }
         }))()
     }

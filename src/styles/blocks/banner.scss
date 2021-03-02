@@ -7,6 +7,10 @@
     margin-bottom: 61px;
     text-align: center;
   }
+  @include w767 {
+    height: 640px;
+    padding-top: 214px;
+  }
   &__subtitle {
     display: inline-block;
     margin-bottom: 18px;
@@ -14,6 +18,9 @@
     font-weight: 500;
     font-size: 12px;
     text-transform: uppercase;
+    @include w767 {
+      margin-bottom: 17px;
+    }
   }
   &__title {
     max-width: 560px;
@@ -27,15 +34,25 @@
       margin-right: auto;
       margin-bottom: 44px;
     }
+    @include w767 {
+      margin-bottom: 24px;
+      font-size: 28px;
+      line-height: 36px;
+    }
   }
   &__text {
     max-width: 530px;
     margin: 0;
     color: $main-white-color08;
     line-height: 24px;
+    font-weight: 500;
     @include w1023 {
       margin-left: auto;
       margin-right: auto;
+    }
+    @include w767 {
+      font-size: 12px;
+      line-height: 16px;
     }
   }
 }
