@@ -87,31 +87,27 @@
       }
     }
     &__item {
-      @include w1023 {
+      @include w767 {
         order: initial !important;
       }
       &:nth-child(1) {
-        order: -10;
-        @include w767 {
-          order: -10 !important;
+        @include w1023 {
+          order: -10;
         }
       }
       &:nth-child(2) {
-        order: -8;
-        @include w767 {
-          order: -8 !important;
+        @include w1023 {
+          order: -7;
         }
       }
-      &:nth-child(4) {
-        order: -9;
-        @include w767 {
-          order: -9 !important;
+      &:nth-child(3) {
+        @include w1023 {
+          order: -9;
         }
       }
       &:nth-child(5) {
-        order: -7;
-        @include w767 {
-          order: -7 !important;
+        @include w1023 {
+          order: -8;
         }
       }
       &:not(:last-child) {
