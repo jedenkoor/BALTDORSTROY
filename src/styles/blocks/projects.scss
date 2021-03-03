@@ -142,12 +142,14 @@
     }
   }
   &__item {
-    width: 984px;
+    max-width: 984px;
     height: 720px;
     @include w1200 {
+      max-width: 700px;
       height: 538px;
     }
     @include w1023 {
+      max-width: 596px;
       height: 438px;
     }
     @include w767 {
