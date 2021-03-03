@@ -64,6 +64,8 @@ import 'swiper/swiper-bundle.css'
           item.classList.add('tabs__container--active')
           initSliderProjects()
           initSliderReviews()
+          item.querySelector('.swiper-wrapper').style.transform =
+            'translate3d(0px, 0px, 0px)'
         }
       })
 
@@ -85,6 +87,9 @@ import 'swiper/swiper-bundle.css'
           speed: 500,
           spaceBetween: 16,
           slideToClickedSlide: true,
+          lazy: {
+            loadPrevNext: true
+          },
           pagination: {
             el: '.projects__tab.tabs__container--active .swiper-pagination'
           },
@@ -96,6 +101,11 @@ import 'swiper/swiper-bundle.css'
           breakpoints: {
             768: {
               spaceBetween: 24
+            },
+            2500: {
+              lazy: {
+                loadPrevNextAmount: 2
+              }
             }
           }
         }))()

@@ -80,8 +80,7 @@
         width: 500px;
       }
       @include w767 {
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
         width: 100%;
         text-align: center;
       }

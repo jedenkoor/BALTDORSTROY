@@ -119,28 +119,22 @@
     }
   }
   &__list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     padding: 0;
     list-style: none;
     @include w1200 {
-      flex-wrap: wrap;
-      gap: 40px 24px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 24px;
     }
-    @include w1200 {
-      gap: 42px 24px;
+    @include w767 {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 32px 24px;
     }
   }
   &__item {
-    flex: 0 0 25.45%;
-    @include w1200 {
-      flex: 0 0 calc(50% - 12px);
-    }
     @include w767 {
-      flex: 0 0 100%;
       text-align: center;
-    }
-    &:last-child {
-      flex: 1;
     }
   }
   &-item {
@@ -156,6 +150,7 @@
       }
     }
     &__title {
+      max-width: 270px;
       margin-top: 0;
       margin-bottom: 24px;
       font-weight: 600;
@@ -167,6 +162,8 @@
       @include w767 {
         font-size: 12px;
         line-height: 16px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
     &__text {

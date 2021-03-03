@@ -14,6 +14,9 @@
       grid-gap: 32px 24px;
     }
   }
+  &__title {
+    max-width: 370px;
+  }
   &__item {
     padding-top: 2px;
     &:first-child {
@@ -41,6 +44,9 @@
     &__text {
       max-width: 249px;
       line-height: 24px;
+      @include w1023 {
+        margin: 0 auto;
+      }
       @include w767 {
         font-size: 12px;
         line-height: 16px;
