@@ -3,6 +3,28 @@
 @import 'variables/colors';
 @import 'variables/indents';
 
+::selection {
+  background-color: rgba(0, 140, 204, 0.99);
+  color: $main-white-color;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $main-white-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $main-blue-color;
+  border-radius: 2px;
+}
+
 html,
 body {
   overflow-x: hidden;
