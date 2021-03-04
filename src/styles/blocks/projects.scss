@@ -191,7 +191,7 @@
       height: 100%;
       object-fit: cover;
       @include w767 {
-        height: 340px;
+        height: 280px;
       }
       &.swiper-lazy:not(.swiper-lazy-loaded) {
         opacity: 0;
@@ -205,11 +205,7 @@
       background: rgba(255, 255, 255, 0.324);
       transition: background 0.5s;
       @include w767 {
-        background: linear-gradient(
-          180deg,
-          #091920 -7.22%,
-          rgba(86, 86, 86, 0) 104.44%
-        );
+        display: none;
       }
     }
     &__top,

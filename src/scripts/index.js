@@ -1,17 +1,55 @@
 import Swiper from 'swiper/swiper-bundle.js'
 import 'swiper/swiper-bundle.css'
+import ScrollMagic from 'scrollmagic'
+import { gsap, TweenMax } from 'gsap'
+import { ScrollToPlugin } from 'gsap/all'
+gsap.registerPlugin(ScrollToPlugin)
 ;(() => {
   window.addEventListener('DOMContentLoaded', () => {
-    // Menu items
-    if (document.querySelectorAll('.header-menu__link').length) {
-      const linksMenu = document.querySelectorAll('.header-menu__link')
+    // Init smothscroll
+    const controller = new ScrollMagic.Controller()
+    controller.scrollTo(function (newpos) {
+      TweenMax.to(window, 0.6, { scrollTo: { y: newpos } })
+    })
+
+    // Load opacity and smothscroll
+    setTimeout(() => {
+      document.querySelector('body').style.opacity = 1
+
+      if (localStorage.getItem('idBLock')) {
+        const element = document.querySelector(
+          `#${localStorage.getItem('idBLock')}`
+        )
+        const topPos = element.getBoundingClientRect().top + window.pageYOffset
+        window.scrollTo({
+          top: topPos
+        })
+        localStorage.removeItem('idBLock')
+      }
+    }, 300)
+
+    // Links transition
+    if (document.querySelectorAll('a').length) {
+      const linksMenu = document.querySelectorAll('a')
       linksMenu.forEach((link) =>
-        link.addEventListener('click', () => {
+        link.addEventListener('click', function (e) {
           document.getElementById('header-menu').checked = false
+
+          const id = this.getAttribute('href').split('#')[1] || ''
+          const linkPathname = this.getAttribute('href').split('#')[0]
+          const currentPathname = location.pathname
+          if (id.length > 0 && currentPathname === linkPathname) {
+            e.preventDefault()
+            controller.scrollTo(`#${id}`)
+          }
+          if (currentPathname !== linkPathname) {
+            e.preventDefault()
+            localStorage.setItem('idBLock', id)
+            location.href = linkPathname
+          }
         })
       )
     }
-    // Menu items End
 
     // Map markers
     if (
@@ -38,7 +76,6 @@ import 'swiper/swiper-bundle.css'
       }
       showMarkersText()
     }
-    // Map markers End
 
     // Tabs
     if (document.querySelectorAll('.tabs').length) {
@@ -77,7 +114,6 @@ import 'swiper/swiper-bundle.css'
 
       e.target.classList.add('tabs__btn--active')
     }
-    // Tabs End
 
     // Swiper projects
     initSliderProjects()
@@ -110,7 +146,6 @@ import 'swiper/swiper-bundle.css'
           }
         }))()
     }
-    // Swiper projects End
 
     // Swiper reviews
     initSliderReviews()
@@ -157,6 +192,5 @@ import 'swiper/swiper-bundle.css'
           }
         }))()
     }
-    // Swiper reviews End
   })
 })()

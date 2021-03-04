@@ -2,7 +2,7 @@
   background-color: $footer-black-color;
   padding: 72px 0 31px;
   @include w767 {
-    padding: 24px 0 28px;
+    padding: 24px 0 16px;
   }
   &__container {
     display: grid;
