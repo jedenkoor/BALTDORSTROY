@@ -18,6 +18,9 @@
     }
   }
   &__logo {
+    svg {
+      max-width: 100%;
+    }
     @include w767 {
       order: 2;
       width: 130px;
@@ -86,6 +89,9 @@
       @include w767 {
         order: 3;
         border: none;
+        border: none;
+        display: flex;
+        align-items: center;
       }
     }
   }

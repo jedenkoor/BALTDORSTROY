@@ -24,6 +24,9 @@
   }
   &__logo {
     transform: translateX(2px);
+    svg {
+      max-width: 100%;
+    }
     @include w1023 {
       position: relative;
       z-index: 4;
